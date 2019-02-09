@@ -1,0 +1,50 @@
+package RemoveStrings;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class RemoveStrings {
+
+    static PrintWriter output;
+    static File sourceFile, temp;
+    static Scanner input;
+
+    public static void main(String[] args) throws Exception{
+
+        try {
+            sourceFile = new File("sourceFile");
+            temp = new File("temp");
+            input = new Scanner(sourceFile);
+            output = new PrintWriter(sourceFile);
+
+            while (input.hasNext()) {
+            String s1 = input.nextLine();
+            System.out.println("Reading and removing " + args[1] + " from file.");
+            String s2 = s1.replaceAll(args[1], "");
+            System.out.println("Done!");
+            System.out.println("Writing back to file!");
+            output.println(s2);
+
+            }
+
+        } catch (FileNotFoundException ex){
+            System.out.println("File " + args[0] + " not found.");
+
+        } catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println("Failed input: " + ex);
+
+        } catch (NullPointerException ex){
+            ex.printStackTrace(System.err);
+
+        } finally {
+
+            output.close();
+            System.out.println("Done!");
+        }
+
+    }
+
+}
