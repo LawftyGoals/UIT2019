@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Modul1/Modul1.iml" filepath="$PROJECT_DIR$/Modul1/Modul1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul2/Modul2.iml" filepath="$PROJECT_DIR$/Modul2/Modul2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul3/Modul3.iml" filepath="$PROJECT_DIR$/Modul3/Modul3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul4/Modul4.iml" filepath="$PROJECT_DIR$/Modul4/Modul4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul5/Modul5.iml" filepath="$PROJECT_DIR$/Modul5/Modul5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul6/Modul6.iml" filepath="$PROJECT_DIR$/Modul6/Modul6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul7/Modul7.iml" filepath="$PROJECT_DIR$/Modul7/Modul7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul8/Modul8.iml" filepath="$PROJECT_DIR$/Modul8/Modul8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Modul9/Modul9.iml" filepath="$PROJECT_DIR$/Modul9/Modul9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UITProg1.iml" filepath="$PROJECT_DIR$/UITProg1.iml" />
+    </modules>
+  </component>
+</project>
