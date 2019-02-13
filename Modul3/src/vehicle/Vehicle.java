@@ -1,8 +1,16 @@
 package vehicle;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-abstract class Vehicle {
+abstract class Vehicle implements Clonable, Comprable<Vechicle> {
+
+
+    Calendar buyingDate = new GregorianCalendar();
+
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
     Scanner sc = new Scanner(System.in);
 
@@ -16,7 +24,7 @@ abstract class Vehicle {
 
     }
 
-    public Vehicle(String colour, String name, String serialNumber, int model,int price, int direction;){
+    public Vehicle(String colour, String name, String serialNumber, int model,int price, int direction){
 
         this.colour = colour;
         this.name = name;
@@ -108,7 +116,32 @@ abstract class Vehicle {
     }
 
     public String toString(){
-        return String.format("Name: %s, Colour: %s, Price: %s, Model: %d, Serial#: %d, Directionn: %d, Speed: %f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed();
+        return String.format("Name: %s, Colour: %s, Price: %s, Model: %d, Serial#: %d, Directionn: %d, Speed: %f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
+    }
+
+    @Override
+
+    public Object clone() throws CloneNotSupportedException {
+
+        return super.clone();
+
+    }
+
+
+    @Override
+
+    public int compareTo(Vehicle o) {
+
+        if (getPrice() > o.getPrice())
+
+            return 1;
+
+        else if (getPrice() < o.getPrice())
+
+            return -1;
+
+        else return 0;
+
     }
 
 }

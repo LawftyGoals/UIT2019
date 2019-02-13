@@ -3,22 +3,22 @@ package vehicle;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.lang.*;
 
-public class Car extends Vehicle {
+public class Bicycle extends Vehicle {
 
-    private int power;
+    private int gears=0;
 
     private java.util.Calendar productionDate = new GregorianCalendar(0000,00,00);
 
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
 
-    public Car(){
+    public Bicycle() {
 
     }
 
-    public Car(String colour, String name, int model, int price, String serialNumber, int direction, int power){
+
+    public Bicycle(String colour, String name,  int model,int price, String serialNumber, int direction, int gears) {
         super();
         super.setColour(colour);
         super.setName(name);
@@ -28,15 +28,21 @@ public class Car extends Vehicle {
         super.setPrice(price);
         super.setDirection(direction);
 
-        this.power = power;
+        this.gears = gears;
+
     }
 
+
     @Override
+
     public void setAllFields(){
+
         super.setAllFields();
-        System.out.print("Power: ");
-        this.power = sc.nextInt();
+
+
+
     }
+
 
     @Override
     public void turnRight(int degrees){
@@ -71,9 +77,9 @@ public class Car extends Vehicle {
 
 
 
-    public int getPower(){
+    public int getGears(){
 
-        return this.power;
+        return this.gears;
 
     }
 
@@ -82,6 +88,7 @@ public class Car extends Vehicle {
     public Calendar getProductionDate(){
 
         return format.format(productionDate.getTime());
+
 
     }
 
@@ -95,9 +102,9 @@ public class Car extends Vehicle {
 
 
 
-    public void setPower(int power){
+    public void setGears(int gears){
 
-        this.power = power;
+        this.gears = gears;
 
     }
 
@@ -107,8 +114,9 @@ public class Car extends Vehicle {
 
     public String toString(){
 
-        return String.format(super.toString() + " Gears: %d", getPower());
+        return String.format(super.toString() + " Gears: %d", getGears());
 
     }
+
 
 }
