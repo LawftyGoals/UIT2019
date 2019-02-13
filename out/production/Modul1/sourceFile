@@ -1,1 +1,6 @@
-is this the real life, or is this fantasy, easy come easy go, hear them fall hear them roar. the the the hahahahah lol the laff out laoud.
+The principl opertions on  StringBuilder tht re not vilble in String re the ppend() nd insert() methods, which re overloded so s to ccept dt of ny type. Ech converts its rgument to  string nd then ppends or inserts the chrcters of tht string to the chrcter sequence in the string builder. The ppend method lwys dds these chrcters t the end of the existing chrcter sequence, while the insert method dds the chrcters t  specified point.
+
+The principl opertions on  StringBuilder tht re not vilble in String re the ppend() nd insert() methods, which re overloded so s to ccept dt of ny type. Ech converts its rgument to  string nd then ppends or inserts the chrcters of tht string to the chrcter sequence in the string builder. The ppend method lwys dds these chrcters t the end of the existing chrcter sequence, while the insert method dds the chrcters t  specified point.
+
+The principl opertions on  StringBuilder tht re not vilble in String re the ppend() nd insert() methods, which re overloded so s to ccept dt of ny type. Ech converts its rgument to  string nd then ppends or inserts the chrcters of tht string to the chrcter sequence in the string builder. The ppend method lwys dds these chrcters t the end of the existing chrcter sequence, while the insert method dds the chrcters t  specified point.
+

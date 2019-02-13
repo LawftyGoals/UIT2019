@@ -26,7 +26,6 @@ abstract class Vehicle {
         this.price = price;
         this.direction = direction;
 
-
     }
 
     public void setAllFields(){
@@ -49,5 +48,67 @@ abstract class Vehicle {
         this.direction = sc.nextInt();
     }
 
+    public abstract void turnLeft(int degrees);
+    public abstract void turnRight(int degrees);
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public int getModel() {
+        return model;
+    }
+
+    public void setModel(int model) {
+        this.model = model;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public String toString(){
+        return String.format("Name: %s, Colour: %s, Price: %s, Model: %d, Serial#: %d, Directionn: %d, Speed: %f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed();
+    }
 
 }
