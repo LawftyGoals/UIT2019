@@ -100,14 +100,25 @@ public class Car extends Vehicle {
             } else {
                 super.setSpeed(super.getSpeed() * speedFactor);
             }
-
         }
+
+        System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
 
     };
 
     @Override
     public void breaks(double speedFactor) {
 
-    };
+
+        if (speedFactor == 0){
+            super.setSpeed(0);
+            System.out.printf("Vehicle has stopped. (%.2f km/h).%n", super.getSpeed());
+        } else {
+            super.setSpeed(super.getSpeed()/speedFactor);
+            System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
+        }
+
+    }
+
 
 }

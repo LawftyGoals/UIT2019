@@ -80,9 +80,11 @@ public class VehicleTest {public static void main(String[] args) {
                         if (arr.get(i).getName().toLowerCase().contains(name.toLowerCase())){
                             System.out.println(arr.get(i).toString());
                             carFound = true;
-                            break;
+
+                            //hvis vi går utifra at det er kun et bil med unikt navn kan du inkludere break; her.
                         }
                     }
+
                     if(carFound==false){
                         System.out.println("Car not found, are you sure the name is right?");
                     }
@@ -166,6 +168,26 @@ public class VehicleTest {public static void main(String[] args) {
                     break;
 
                 case 7:
+                    Car sTCar = new Car("Toyota","Black",20000,2005,"11-116",35,116);
+                    Bicycle sTBicycle = new Bicycle("GitHub", "Brown", 500, 1962, "J1FFY", 5, 2);
+
+
+                    System.out.println("Car: ");
+                    sTCar.accelerate(50);
+                    sTCar.accelerate(5);
+                    sTCar.breaks(40);
+                    sTCar.breaks(0);
+                    System.out.println("");
+
+
+                    System.out.println("Bicycle: ");
+                    sTBicycle.accelerate(50);
+                    sTBicycle.accelerate(5);
+                    sTBicycle.breaks(40);
+                    sTBicycle.breaks(0);
+                    System.out.println("");
+
+                case 8:
                     scan.close();
                     System.exit(0);
 

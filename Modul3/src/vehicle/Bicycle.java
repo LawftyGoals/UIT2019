@@ -94,5 +94,41 @@ public class Bicycle extends Vehicle {
 
     }
 
+    @Override
+    public void accelerate(double speedFactor){
+
+        if (super.getSpeed() == 0){
+            if (speedFactor*0.3 > Driveable.MAX_SPEED_BIKE){
+                super.setSpeed(Driveable.MAX_SPEED_BIKE);
+            } else {
+                super.setSpeed(speedFactor*0.3);
+            }
+
+        } else {
+            if (super.getSpeed()*speedFactor > Driveable.MAX_SPEED_BIKE) {
+                super.setSpeed(Driveable.MAX_SPEED_BIKE);
+            } else {
+                super.setSpeed(super.getSpeed() * speedFactor);
+            }
+        }
+
+        System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
+
+    }
+
+    @Override
+    public void breaks(double speedFactor) {
+
+
+        if (speedFactor == 0){
+            super.setSpeed(0);
+            System.out.printf("Vehicle has stopped. (%.2f km/h).%n", super.getSpeed());
+        } else {
+            super.setSpeed(super.getSpeed()/speedFactor);
+            System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
+        }
+
+    }
+
 
 }
