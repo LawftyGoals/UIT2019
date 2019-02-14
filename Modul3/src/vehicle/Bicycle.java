@@ -28,7 +28,7 @@ public class Bicycle extends Vehicle {
         super.setPrice(price);
         super.setDirection(direction);
 
-        this.gears = gears;
+        this.setGears(gears);
 
     }
 
@@ -46,13 +46,10 @@ public class Bicycle extends Vehicle {
 
     @Override
     public void turnRight(int degrees){
-
         if(degrees >=0 && degrees <=360){
-
             super.setDirection(degrees);
 
         } else if (degrees>360){
-
             super.setDirection(degrees % 360);
         }
 
@@ -62,23 +59,17 @@ public class Bicycle extends Vehicle {
 
     @Override
     public void turnLeft(int degrees){
-
         if(degrees >=0 && degrees <=360){
-
             super.setDirection(degrees);
 
         } else if (degrees>360){
-
-            super.setDirection(degrees % 360);
+            super.setDirection(360-(degrees % 360));
 
         }
-
     }
 
 
-
     public int getGears(){
-
         return this.gears;
 
     }
@@ -86,24 +77,19 @@ public class Bicycle extends Vehicle {
 
 
     public Calendar getProductionDate(){
-
-        return format.format(productionDate.getTime());
-
+        return productionDate;
 
     }
 
 
 
     public void setProductionDate(Calendar calendar){
-
         this.productionDate = calendar;
-
     }
 
 
 
     public void setGears(int gears){
-
         this.gears = gears;
 
     }
@@ -111,10 +97,8 @@ public class Bicycle extends Vehicle {
 
 
     @Override
-
     public String toString(){
-
-        return String.format(super.toString() + " Gears: %d", getGears());
+        return String.format(super.toString() + " Gears: %d Production Date: %td-%tm-%tY%n", getGears(), getProductionDate());
 
     }
 

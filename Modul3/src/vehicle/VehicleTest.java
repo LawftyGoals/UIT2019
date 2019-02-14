@@ -69,14 +69,52 @@ public class VehicleTest {public static void main(String[] args) {
                 case 3:
                     System.out.print("Vehicle name: ");
                     String name = scan.nextLine();
-                    for (int i = 0; i)
+                    boolean carFound = false;
+                    for (int i = 0; i < arr.size(); i++){
+                        if (arr.get(i).getName().toLowerCase().contains(name.toLowerCase())){
+                            System.out.println(arr.get(i).toString());
+                            carFound = true;
+                            break;
+                        }
+                    }
+                    if(carFound==false){
+                        System.out.println("Car not found, are you sure the name is right?");
+                    }
                         //vis info om gitt kjøretøy
                         break;
 
                 case 4://vis info om alle kjøretøy
+                    for (int i = 0; i < arr.size(); i++){
+                        System.out.println(arr.get(i).toString());
+
+                    }
                     break;
 
                 case 5:// Finn kjøretøy med gitt navn, sett ny retning
+                    System.out.print("Vehicle name: ");
+                    String nameDir = scan.nextLine();
+                    boolean carFoundDir = false;
+                    for (int i = 0; i < arr.size(); i++){
+                        if (arr.get(i).getName().toLowerCase().contains(nameDir.toLowerCase())){
+                            System.out.print("Direction (l/n): ");
+                            String turnDir = scan.nextLine();
+                            System.out.print("Degrees: ");
+                            int degTurn = scan.nextInt();
+                            if(turnDir.toLowerCase() == "l"){
+                                arr.get(i).turnLeft(degTurn);
+                            }else if (turnDir.toLowerCase() == "r"){
+                                arr.get(i).turnRight(degTurn);
+                            } else {
+                                System.out.println("Invalid direction.");
+                            }
+                            carFoundDir = true;
+                            break;
+                        }
+                    }
+                    if(carFoundDir==false){
+                        System.out.println("Car not found, are you sure the name is right?");
+                    }
+
                     break;
 
                 case 6:

@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-abstract class Vehicle implements Clonable, Comprable<Vechicle> {
+abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
 
 
     Calendar buyingDate = new GregorianCalendar();
@@ -120,15 +120,11 @@ abstract class Vehicle implements Clonable, Comprable<Vechicle> {
     }
 
     @Override
-
     public Object clone() throws CloneNotSupportedException {
 
         return super.clone();
 
     }
-
-
-    @Override
 
     public int compareTo(Vehicle o) {
 
