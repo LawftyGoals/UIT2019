@@ -1,6 +1,5 @@
 package vehicle;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -8,9 +7,7 @@ import java.util.Scanner;
 abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
 
 
-    Calendar buyingDate = new GregorianCalendar();
-
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    Calendar buyingDate = new GregorianCalendar().getInstance();
 
     Scanner sc = new Scanner(System.in);
 
@@ -116,7 +113,7 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
     }
 
     public String toString(){
-        return String.format("Name: %s, Colour: %s, Price: %s, Model: %d, Serial#: %d, Directionn: %d, Speed: %f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
+        return String.format("Name: %s, Colour: %s, Price: %d, Model: %d, Serial#: %s, Directionn: %d, Speed: %.2f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
     }
 
     @Override

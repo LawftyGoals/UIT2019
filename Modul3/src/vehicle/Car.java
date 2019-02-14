@@ -7,16 +7,16 @@ public class Car extends Vehicle {
 
     private int power;
 
-    private java.util.Calendar productionDate = new GregorianCalendar(0000,00,00);
+    private java.util.Calendar productionDate = new GregorianCalendar().getInstance();
 
     public Car(){
 
     }
 
-    public Car(String colour, String name, int model, int price, String serialNumber, int direction, int power){
+    public Car(String name, String colour, int model, int price, String serialNumber, int direction, int power){
         super();
-        super.setColour(colour);
         super.setName(name);
+        super.setColour(colour);
         super.setSerialNumber(serialNumber);
 
         super.setModel(model);
@@ -86,7 +86,7 @@ public class Car extends Vehicle {
 
     @Override
     public String toString(){
-        return String.format(super.toString() + " Gears: %d% Production Date: %td-%tm-%tY%n", getPower(), getProductionDate());
+        return String.format(super.toString() + " Gears: %d Production Date: %tF", getPower(), getProductionDate());
 
     }
 

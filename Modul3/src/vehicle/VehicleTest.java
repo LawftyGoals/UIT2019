@@ -57,6 +57,7 @@ public class VehicleTest {public static void main(String[] args) {
                     vehicle = new Car();
                     vehicle.setAllFields();
                     arr.add(vehicle);
+                    System.out.println("");
                     //legg til en ny bil
                     break;
 
@@ -64,6 +65,7 @@ public class VehicleTest {public static void main(String[] args) {
                     vehicle = new Bicycle();
                     vehicle.setAllFields();
                     arr.add(vehicle);
+                    System.out.println("");
                     break;
 
                 case 3:
@@ -80,6 +82,7 @@ public class VehicleTest {public static void main(String[] args) {
                     if(carFound==false){
                         System.out.println("Car not found, are you sure the name is right?");
                     }
+                    System.out.println("");
                         //vis info om gitt kjøretøy
                         break;
 
@@ -88,12 +91,17 @@ public class VehicleTest {public static void main(String[] args) {
                         System.out.println(arr.get(i).toString());
 
                     }
+                    System.out.println("");
                     break;
 
                 case 5:// Finn kjøretøy med gitt navn, sett ny retning
+
                     System.out.print("Vehicle name: ");
+
                     String nameDir = scan.nextLine();
+
                     boolean carFoundDir = false;
+
                     for (int i = 0; i < arr.size(); i++){
                         if (arr.get(i).getName().toLowerCase().contains(nameDir.toLowerCase())){
                             System.out.print("Direction (l/n): ");

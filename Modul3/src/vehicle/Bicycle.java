@@ -1,6 +1,5 @@
 package vehicle;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -8,9 +7,7 @@ public class Bicycle extends Vehicle {
 
     private int gears=0;
 
-    private java.util.Calendar productionDate = new GregorianCalendar(0000,00,00);
-
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private java.util.Calendar productionDate = new GregorianCalendar().getInstance();
 
 
     public Bicycle() {
@@ -20,8 +17,8 @@ public class Bicycle extends Vehicle {
 
     public Bicycle(String colour, String name,  int model,int price, String serialNumber, int direction, int gears) {
         super();
-        super.setColour(colour);
         super.setName(name);
+        super.setColour(colour);
         super.setSerialNumber(serialNumber);
 
         super.setModel(model);
@@ -98,7 +95,7 @@ public class Bicycle extends Vehicle {
 
     @Override
     public String toString(){
-        return String.format(super.toString() + " Gears: %d Production Date: %td-%tm-%tY%n", getGears(), getProductionDate());
+        return String.format(super.toString() + " Gears: %d Production Date: %tF", getGears(), getProductionDate());
 
     }
 
