@@ -45,10 +45,13 @@ public class VehicleTest {public static void main(String[] args) {
             System.out.println("3......................Find vehicle by name");
             System.out.println("4..............Show data about all vehicles");
             System.out.println("5.......Change direction of a given vehicle");
-            System.out.println("6..............................Exit program");
+            System.out.println("6.........................Test Clone Method");
+            System.out.println("7..............................Exit program");
             System.out.println(".............................Your choice?");
 
             int choice = scan.nextInt();
+
+            System.out.println("");
 
 
             switch (choice) {
@@ -136,6 +139,33 @@ public class VehicleTest {public static void main(String[] args) {
                     break;
 
                 case 6:
+                    Car newCar = new Car("Toyota","Black",20000,2005,"11-116",35,116);
+
+                    try {
+
+                        Car newCarClone = (Car)newCar.clone();
+
+                        newCarClone.setProductionDate(new GregorianCalendar(1000, 10, 10));
+
+
+
+                        if (newCar.getProductionDate() != newCarClone.getProductionDate()) {
+                            System.out.println("Date objects are separate, deep copy.");
+                            System.out.printf("%tF%n", newCar.getProductionDate());
+                            System.out.printf("%tF%n%n", newCarClone.getProductionDate());
+                        } else {
+                            System.out.println("Data objects not seperate, shallow copy.");
+                            System.out.printf("%tF%n", newCar.getProductionDate());
+                            System.out.printf("%tF%n%n", newCarClone.getProductionDate());
+                        }
+
+
+                    } catch(CloneNotSupportedException e) {
+                        System.out.println("Error cloning, clone not supported.");
+                    }
+                    break;
+
+                case 7:
                     scan.close();
                     System.exit(0);
 

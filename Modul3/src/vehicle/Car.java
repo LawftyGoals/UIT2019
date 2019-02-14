@@ -13,7 +13,7 @@ public class Car extends Vehicle {
 
     }
 
-    public Car(String name, String colour, int model, int price, String serialNumber, int direction, int power){
+    public Car(String name, String colour, int price, int model, String serialNumber, int direction, int power){
         super();
         super.setName(name);
         super.setColour(colour);
@@ -33,7 +33,6 @@ public class Car extends Vehicle {
         this.power = sc.nextInt();
     }
 
-
     @Override
     public void turnRight(int degrees){
         if(degrees >=0 && degrees <=360){
@@ -43,7 +42,6 @@ public class Car extends Vehicle {
             super.setDirection(degrees % 360);
         }
     }
-
 
     @Override
     public void turnLeft(int degrees){
@@ -57,12 +55,10 @@ public class Car extends Vehicle {
     }
 
 
-
     public int getPower(){
         return this.power;
 
     }
-
 
 
     public Calendar getProductionDate(){
@@ -71,12 +67,10 @@ public class Car extends Vehicle {
     }
 
 
-
     public void setProductionDate(Calendar calendar){
         this.productionDate = calendar;
 
     }
-
 
 
     public void setPower(int power){

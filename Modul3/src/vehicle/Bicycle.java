@@ -15,7 +15,7 @@ public class Bicycle extends Vehicle {
     }
 
 
-    public Bicycle(String name, String colour,  int model, int price, String serialNumber, int direction, int gears) {
+    public Bicycle(String name, String colour, int price, int model, String serialNumber, int direction, int gears) {
         super();
         super.setName(name);
         super.setColour(colour);
@@ -72,12 +72,10 @@ public class Bicycle extends Vehicle {
     }
 
 
-
     public Calendar getProductionDate(){
         return productionDate;
 
     }
-
 
 
     public void setProductionDate(Calendar calendar){
@@ -85,13 +83,10 @@ public class Bicycle extends Vehicle {
     }
 
 
-
     public void setGears(int gears){
         this.gears = gears;
 
     }
-
-
 
     @Override
     public String toString(){
