@@ -47,6 +47,7 @@ public class VehicleTest {public static void main(String[] args) {
             System.out.println("5.......Change direction of a given vehicle");
             System.out.println("6.........................Test Clone Method");
             System.out.println("7..............................Exit program");
+            System.out.println("8.......................Test Drive Vehicles");
             System.out.println(".............................Your choice?");
 
             int choice = scan.nextInt();

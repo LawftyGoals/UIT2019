@@ -1,13 +1,15 @@
 package vehicle;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable{
+abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fileable{
 
 
-    Calendar buyingDate = new GregorianCalendar().getInstance();
+    Calendar buyingDate = new GregorianCalendar();
 
     Scanner sc = new Scanner(System.in);
 
@@ -26,6 +28,7 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable{
         this.colour = colour;
         this.name = name;
         this.serialNumber = serialNumber;
+        buyingDate = new GregorianCalendar().getInstance();
 
         this.model = model;
         this.price = price;
@@ -112,8 +115,16 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable{
         this.speed = speed;
     }
 
+    public Calendar getBuyingDate(){
+        return this.buyingDate;
+    }
+
+    public void setBuyingDate(Calendar c){
+        this.buyingDate = c;
+    }
+
     public String toString(){
-        return String.format("Name: %s, Colour: %s, Price: %d, Model: %d, Serial#: %s, Direction: %d, Speed: %.2f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
+        return String.format("Name: %s, Colour: %s, Price: %d, Model: %d, Serial#: %s, Direction: %d, Speed: %.2f, Buying date: %tF", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed(), getBuyingDate());
     }
 
     @Override
@@ -141,6 +152,17 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable{
     public void stop(){
         setSpeed(0);
         System.out.printf("Speed has been set to 0");
+    }
+
+
+    @Override
+    public void writeData(PrintWriter out) throws IOException{
+
+    }
+
+    @Override
+    public void readData(Scanner in) throws IOException{
+
     }
 
 
