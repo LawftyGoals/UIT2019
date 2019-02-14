@@ -48,7 +48,7 @@ public class Car extends Vehicle {
     @Override
     public void turnLeft(int degrees){
         if(degrees >=0 && degrees <=360){
-            super.setDirection(degrees);
+            super.setDirection(360-degrees);
 
         } else if (degrees>360){
             super.setDirection(360-(degrees % 360));

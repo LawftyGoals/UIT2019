@@ -113,7 +113,7 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
     }
 
     public String toString(){
-        return String.format("Name: %s, Colour: %s, Price: %d, Model: %d, Serial#: %s, Directionn: %d, Speed: %.2f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
+        return String.format("Name: %s, Colour: %s, Price: %d, Model: %d, Serial#: %s, Direction: %d, Speed: %.2f", getName(),getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed());
     }
 
     @Override

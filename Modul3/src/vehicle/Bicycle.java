@@ -15,7 +15,7 @@ public class Bicycle extends Vehicle {
     }
 
 
-    public Bicycle(String colour, String name,  int model,int price, String serialNumber, int direction, int gears) {
+    public Bicycle(String name, String colour,  int model, int price, String serialNumber, int direction, int gears) {
         super();
         super.setName(name);
         super.setColour(colour);
@@ -57,7 +57,7 @@ public class Bicycle extends Vehicle {
     @Override
     public void turnLeft(int degrees){
         if(degrees >=0 && degrees <=360){
-            super.setDirection(degrees);
+            super.setDirection(360-degrees);
 
         } else if (degrees>360){
             super.setDirection(360-(degrees % 360));

@@ -69,8 +69,9 @@ public class VehicleTest {public static void main(String[] args) {
                     break;
 
                 case 3:
+                    Scanner sc = new Scanner(System.in);
                     System.out.print("Vehicle name: ");
-                    String name = scan.nextLine();
+                    String name = sc.nextLine();
                     boolean carFound = false;
                     for (int i = 0; i < arr.size(); i++){
                         if (arr.get(i).getName().toLowerCase().contains(name.toLowerCase())){
@@ -96,25 +97,34 @@ public class VehicleTest {public static void main(String[] args) {
 
                 case 5:// Finn kjøretøy med gitt navn, sett ny retning
 
+                    Scanner sci = new Scanner(System.in);
+
                     System.out.print("Vehicle name: ");
 
-                    String nameDir = scan.nextLine();
+                    String nameDir = sci.nextLine();
 
                     boolean carFoundDir = false;
 
                     for (int i = 0; i < arr.size(); i++){
                         if (arr.get(i).getName().toLowerCase().contains(nameDir.toLowerCase())){
-                            System.out.print("Direction (l/n): ");
-                            String turnDir = scan.nextLine();
+
+                            System.out.print("Direction (l/r): ");
+                            String turnDir = new Scanner(System.in).nextLine();
+
                             System.out.print("Degrees: ");
-                            int degTurn = scan.nextInt();
-                            if(turnDir.toLowerCase() == "l"){
+                            int degTurn = new Scanner(System.in).nextInt();
+
+                            if (turnDir.equals("l")){
                                 arr.get(i).turnLeft(degTurn);
-                            }else if (turnDir.toLowerCase() == "r"){
+
+                            } else if (turnDir.equals("r")){
                                 arr.get(i).turnRight(degTurn);
+
                             } else {
                                 System.out.println("Invalid direction.");
+
                             }
+
                             carFoundDir = true;
                             break;
                         }
