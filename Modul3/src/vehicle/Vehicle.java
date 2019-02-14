@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
+abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable{
 
 
     Calendar buyingDate = new GregorianCalendar().getInstance();
@@ -136,5 +136,13 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable{
         else return 0;
 
     }
+
+    @Override
+    public void stop(){
+        setSpeed(0);
+        System.out.printf("Speed has been set to 0");
+    }
+
+
 
 }

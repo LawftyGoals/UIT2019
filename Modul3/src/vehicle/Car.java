@@ -84,6 +84,30 @@ public class Car extends Vehicle {
 
     }
 
-    //updated.
+    @Override
+    public void accelerate(double speedFactor){
+
+        if (super.getSpeed() == 0){
+            if (speedFactor*0.5 > Driveable.MAX_SPEED_CAR){
+                super.setSpeed(Driveable.MAX_SPEED_CAR);
+            } else {
+                super.setSpeed(speedFactor*0.5);
+            }
+
+        } else {
+            if (super.getSpeed()*speedFactor > Driveable.MAX_SPEED_CAR) {
+                super.setSpeed(Driveable.MAX_SPEED_CAR);
+            } else {
+                super.setSpeed(super.getSpeed() * speedFactor);
+            }
+
+        }
+
+    };
+
+    @Override
+    public void breaks(double speedFactor) {
+
+    };
 
 }
