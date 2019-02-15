@@ -2,8 +2,12 @@ package vehicle;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 public class Car extends Vehicle {
 
@@ -125,9 +129,29 @@ public class Car extends Vehicle {
     @Override
     public void writeData(PrintWriter out) throws IOException {
 
-        out.printf("%s", getClass().getName());
+        out.printf("%s,", getClass().getName());
         super.writeData(out);
         out.printf("%s%n", getPower());
+
+    }
+
+    @Override
+    public void readData(Scanner in) throws IOException{
+
+        super.readData(in);
+        in.useDelimiter(",");
+        Calendar cal = Calendar.getInstance();
+
+        setPower(sc.nextInt());
+        try {
+
+            Date prodDateTry = new SimpleDateFormat("yyyy-MM-dd").parse(in.next());
+            cal.setTime(prodDateTry);
+            setBuyingDate(cal);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
     }
 

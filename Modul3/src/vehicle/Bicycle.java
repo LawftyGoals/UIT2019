@@ -1,7 +1,13 @@
 package vehicle;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 public class Bicycle extends Vehicle {
 
@@ -126,6 +132,35 @@ public class Bicycle extends Vehicle {
         } else {
             super.setSpeed(super.getSpeed()/speedFactor);
             System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
+        }
+
+    }
+
+    @Override
+    public void writeData(PrintWriter out) throws IOException {
+
+        out.printf("%s,", getClass().getName());
+        super.writeData(out);
+        out.printf("%s%n", getGears());
+
+    }
+
+    @Override
+    public void readData(Scanner in) throws IOException{
+
+        super.readData(in);
+        in.useDelimiter(",");
+        Calendar cal = Calendar.getInstance();
+
+        setGears(sc.nextInt());
+        try {
+
+            Date prodDateTry = new SimpleDateFormat("yyyy-MM-dd").parse(in.next());
+            cal.setTime(prodDateTry);
+            setBuyingDate(cal);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
     }
