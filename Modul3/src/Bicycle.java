@@ -1,11 +1,6 @@
-package vehicle;
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -141,7 +136,7 @@ public class Bicycle extends Vehicle {
 
         out.printf("%s,", getClass().getName());
         super.writeData(out);
-        out.printf("%s,%n", getGears());
+        out.printf("%s,", getGears());
 
     }
 
@@ -151,7 +146,9 @@ public class Bicycle extends Vehicle {
         super.readData(in);
         Calendar cal = Calendar.getInstance();
 
-        setGears(sc.nextInt());
+        setGears(in.nextInt());
+
+        /*
         try {
 
             Date prodDateTry = new SimpleDateFormat("yyyy-MM-dd").parse(in.next());
@@ -161,7 +158,7 @@ public class Bicycle extends Vehicle {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
+*/
     }
 
 

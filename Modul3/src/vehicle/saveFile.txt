@@ -1,4 +1,0 @@
-vehicle.Car,Volvo,Black,85000,2010,1010-11,163,0.000000,2019-02-15,0,
-vehicle.Bicycle,Diamant,yellow,4000,1993,BC100,10,0.000000,2019-02-15,0,
-vehicle.Car,Ferrari Testarossa,red,1200000,1996,A112,350,0.000000,2019-02-15,0,
-vehicle.Bicycle,DBS,pink,5000,1994,42,10,0.000000,2019-02-15,0,

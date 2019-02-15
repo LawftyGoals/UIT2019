@@ -1,5 +1,3 @@
-package vehicle;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -169,17 +167,18 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fil
 
         Calendar cal = Calendar.getInstance();
 
-        setColour(sc.next());
+        setName(in.next());
+        setColour(in.next());
 
-        setPrice(sc.nextInt());
+        setPrice(in.nextInt());
 
-        setModel(sc.nextInt());
+        setModel(in.nextInt());
 
-        setSerialNumber(sc.next());
+        setSerialNumber(in.next());
 
-        setDirection(sc.nextInt());
+        setDirection(in.nextInt());
 
-        setSpeed(sc.nextDouble());
+        setSpeed(in.nextDouble());
 
         try {
 

@@ -1,11 +1,6 @@
-package vehicle;
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -131,7 +126,7 @@ public class Car extends Vehicle {
 
         out.printf("%s,", getClass().getName());
         super.writeData(out);
-        out.printf("%s,%n", getPower());
+        out.printf("%s,", getPower());
 
     }
 
@@ -140,7 +135,8 @@ public class Car extends Vehicle {
 
         Calendar cal = Calendar.getInstance();
         super.readData(in);
-        setPower(sc.nextInt());
+        setPower(in.nextInt());
+        /*
         try {
 
             Date prodDateTry = new SimpleDateFormat("yyyy-MM-dd").parse(in.next());
@@ -149,7 +145,7 @@ public class Car extends Vehicle {
 
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 

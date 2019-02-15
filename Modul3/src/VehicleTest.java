@@ -1,5 +1,3 @@
-package vehicle;
-
 /***  TestVehicles oppretter Bicycle og Car objekter, legger disse i et ArrayList*  Lar bruker manipulere data i arrayet på forskjellige måter*/
 import java.util.*;
 import java.io.*;
@@ -46,16 +44,14 @@ public class VehicleTest {public static void main(String[] args) {
 
         Vehicle vehicle;
 
-        File saveFile = new File("/home/oliver/IdeaProjects/UITProg1/Modul3/src/vehicle/saveFile.txt");
+        File saveFile = new File("/home/oliver/IdeaProjects/UITProg1/Modul3/src/saveFile.txt");
 
         Scanner in = new Scanner(saveFile).useLocale(Locale.US);
 
         in.useDelimiter(",");
-/*
+
         while(in.hasNext()){
             String vehClass = in.next();
-            System.out.println(vehClass);
-
             Class veh1 = Class.forName(vehClass);
 
             Vehicle veh = (Vehicle) veh1.newInstance();
@@ -79,7 +75,10 @@ public class VehicleTest {public static void main(String[] args) {
         }
 
         in.close();
-*/
+
+        PrintWriter clear = new PrintWriter(saveFile);
+        clear.close();
+
 
         arr.add(new Car("Volvo","Black",85000,2010,"1010-11",163,0));
         arr.add(new Bicycle("Diamant","yellow",4000,1993,"BC100",10,0));
