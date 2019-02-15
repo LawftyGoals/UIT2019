@@ -51,7 +51,7 @@ public class VehicleTest {public static void main(String[] args) {
         Scanner in = new Scanner(saveFile).useLocale(Locale.US);
 
         in.useDelimiter(",");
-
+/*
         while(in.hasNext()){
             String vehClass = in.next();
             System.out.println(vehClass);
@@ -79,7 +79,7 @@ public class VehicleTest {public static void main(String[] args) {
         }
 
         in.close();
-
+*/
 
         arr.add(new Car("Volvo","Black",85000,2010,"1010-11",163,0));
         arr.add(new Bicycle("Diamant","yellow",4000,1993,"BC100",10,0));
