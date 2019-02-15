@@ -149,7 +149,6 @@ public class Bicycle extends Vehicle {
     public void readData(Scanner in) throws IOException{
 
         super.readData(in);
-        in.useDelimiter(",");
         Calendar cal = Calendar.getInstance();
 
         setGears(sc.nextInt());

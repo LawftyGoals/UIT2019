@@ -167,12 +167,8 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fil
     @Override
     public void readData(Scanner in) throws IOException{
 
-        in.useDelimiter(",");
-
-        String reader;
         Calendar cal = Calendar.getInstance();
 
-        reader = sc.next();
         setName(sc.next());
 
         setColour(sc.next());

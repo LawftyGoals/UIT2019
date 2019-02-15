@@ -21,18 +21,56 @@ public class VehicleTest {public static void main(String[] args) {
     } catch(CloneNotSupportedException e) {
 
         System.out.println("CloneNotSupportedException");
-        System.exit(1);
+        System.exit(2);
+
+    } catch(ClassNotFoundException e){
+        System.out.println("ClassNotFoundException");
+        System.exit(3);
+
+    } catch(IllegalAccessException e){
+        System.out.println("IllegalAccessException");
+        System.exit(4);
+
+    } catch(InstantiationException e){
+        System.out.println("InstantiationException");
+        System.exit(5);
 
     }
 }
 
-    private void menuLoop() throws IOException, CloneNotSupportedException {
+    private void menuLoop() throws IOException, CloneNotSupportedException, ClassNotFoundException, IllegalAccessException, InstantiationException {
 
         Scanner scan = new Scanner(System.in);
 
         ArrayList<Vehicle> arr = new ArrayList<Vehicle>();
 
         Vehicle vehicle;
+
+        Scanner in = new Scanner(new File("saveFile.txt")).useLocale(Locale.US);
+        in.useDelimiter(",");
+
+        while(in.hasNext()){
+            String vehClass = in.next();
+
+            if (vehClass.equals("Car")){
+                Class veh1 = Class.forName(vehClass);
+                Vehicle veh = (Vehicle)veh1.newInstance();
+                veh.readData(in);
+                arr.add(veh);
+
+            } else if (vehClass.equals("Bicycle")){
+                Class veh1 = Class.forName(vehClass);
+                Vehicle veh = (Vehicle)veh1.newInstance();
+                veh.readData(in);
+                arr.add(veh);
+
+            }
+
+        }
+
+        in.close();
+
+
 
         arr.add(new Car("Volvo","Black",85000,2010,"1010-11",163,0));
         arr.add(new Bicycle("Diamant","yellow",4000,1993,"BC100",10,0));
@@ -190,6 +228,9 @@ public class VehicleTest {public static void main(String[] args) {
 
                 case 8:
                     scan.close();
+
+                    for(int k = 0; k < arr.size(); )
+
                     System.exit(0);
 
 
