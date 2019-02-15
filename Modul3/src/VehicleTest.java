@@ -36,6 +36,7 @@ public class VehicleTest {public static void main(String[] args) {
     }
 }
 
+
     private void menuLoop() throws IOException, CloneNotSupportedException, ClassNotFoundException, IllegalAccessException, InstantiationException {
 
         Scanner scan = new Scanner(System.in);
