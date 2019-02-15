@@ -169,8 +169,6 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fil
 
         Calendar cal = Calendar.getInstance();
 
-        setName(sc.next());
-
         setColour(sc.next());
 
         setPrice(sc.nextInt());

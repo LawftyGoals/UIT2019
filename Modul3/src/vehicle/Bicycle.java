@@ -141,7 +141,7 @@ public class Bicycle extends Vehicle {
 
         out.printf("%s,", getClass().getName());
         super.writeData(out);
-        out.printf("%s%n", getGears());
+        out.printf("%s,%n", getGears());
 
     }
 

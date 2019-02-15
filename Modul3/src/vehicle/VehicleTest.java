@@ -46,30 +46,39 @@ public class VehicleTest {public static void main(String[] args) {
 
         Vehicle vehicle;
 
-        Scanner in = new Scanner(new File("saveFile.txt")).useLocale(Locale.US);
+        File saveFile = new File("/home/oliver/IdeaProjects/UITProg1/Modul3/src/vehicle/saveFile.txt");
+
+        Scanner in = new Scanner(saveFile).useLocale(Locale.US);
+
         in.useDelimiter(",");
 
         while(in.hasNext()){
             String vehClass = in.next();
+            System.out.println(vehClass);
 
-            if (vehClass.equals("Car")){
-                Class veh1 = Class.forName(vehClass);
-                Vehicle veh = (Vehicle)veh1.newInstance();
+            Class veh1 = Class.forName(vehClass);
+
+            Vehicle veh = (Vehicle) veh1.newInstance();
+
+
+            if (veh1.getName().equals("Car")){
                 veh.readData(in);
                 arr.add(veh);
 
-            } else if (vehClass.equals("Bicycle")){
-                Class veh1 = Class.forName(vehClass);
-                Vehicle veh = (Vehicle)veh1.newInstance();
+                System.out.println("Reading vehicle from file: " + veh);
+
+            } else if (veh1.getName().equals("Bicycle")){
+
                 veh.readData(in);
                 arr.add(veh);
+
+                System.out.println("Reading vehicle from file: " + veh);
 
             }
 
         }
 
         in.close();
-
 
 
         arr.add(new Car("Volvo","Black",85000,2010,"1010-11",163,0));
@@ -84,8 +93,8 @@ public class VehicleTest {public static void main(String[] args) {
             System.out.println("4..............Show data about all vehicles");
             System.out.println("5.......Change direction of a given vehicle");
             System.out.println("6.........................Test Clone Method");
-            System.out.println("7..............................Exit program");
-            System.out.println("8.......................Test Drive Vehicles");
+            System.out.println("7.......................Test Drive Vehicles");
+            System.out.println("8..............................Exit program");
             System.out.println(".............................Your choice?");
 
             int choice = scan.nextInt();
@@ -229,7 +238,22 @@ public class VehicleTest {public static void main(String[] args) {
                 case 8:
                     scan.close();
 
-                    for(int k = 0; k < arr.size(); )
+                    try(PrintWriter writer = new PrintWriter(saveFile)){
+
+                        for(int k = 0; k < arr.size(); k++){
+                            System.out.println("Writing vehicle to file:" + arr.get(k));
+
+                            arr.get(k).writeData(writer);
+
+                        }
+
+
+                    } catch(IOException e){
+                        System.out.println("IOException");
+
+                    }
+
+
 
                     System.exit(0);
 

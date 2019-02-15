@@ -131,16 +131,15 @@ public class Car extends Vehicle {
 
         out.printf("%s,", getClass().getName());
         super.writeData(out);
-        out.printf("%s%n", getPower());
+        out.printf("%s,%n", getPower());
 
     }
 
     @Override
     public void readData(Scanner in) throws IOException{
 
-        super.readData(in);
         Calendar cal = Calendar.getInstance();
-
+        super.readData(in);
         setPower(sc.nextInt());
         try {
 
