@@ -1,5 +1,7 @@
 package vehicle;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -117,6 +119,15 @@ public class Car extends Vehicle {
             super.setSpeed(super.getSpeed()/speedFactor);
             System.out.printf("Vehicle is traveling at %.2f km/h.%n", super.getSpeed());
         }
+
+    }
+
+    @Override
+    public void writeData(PrintWriter out) throws IOException {
+
+        out.printf("%s", getClass().getName());
+        super.writeData(out);
+        out.printf("%s%n", getPower());
 
     }
 

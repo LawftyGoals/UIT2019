@@ -1,9 +1,11 @@
 package vehicle;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Scanner;
 
 abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fileable{
@@ -157,11 +159,41 @@ abstract class Vehicle implements Comparable<Vehicle>, Cloneable, Driveable, Fil
 
     @Override
     public void writeData(PrintWriter out) throws IOException{
+        out.printf("%s,%s,%s,%s,%s,%s,%s,%s", getName(), getColour(), getPrice(), getModel(), getSerialNumber(), getDirection(), getSpeed(), getBuyingDate());
 
     }
 
     @Override
     public void readData(Scanner in) throws IOException{
+
+        File file = new File("saveFile.txt");
+        boolean cont = true;
+
+        do {
+
+            try(Scanner saveReader = new Scanner(file).useLocale(Locale.US);){
+
+                while(saveReader.hasNext()){
+                    sc.nextDouble();
+                    counter++;
+                    cont = true;
+                }
+
+                average = sum/counter;
+
+                System.out.println("Sum: " + sum);
+                System.out.println("Average: " + average);
+
+
+
+            }
+        } while (cont);
+
+
+        in.useDelimiter(",");
+        String vehClass = in.next();                    // leser klassenavnet fra filen
+        Class veh1 = Class.forName(vehClass);           // oppretter Class objekt for angitt klassenavn (String)
+        Vehicle veh = (Vehicle)veh1.newInstance();      // oppretter ny instans av Vehicle
 
     }
 
